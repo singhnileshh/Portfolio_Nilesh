@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilesh-Portfolio Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-vlbc0P7shwAQtkq4GzEwO54Ff/U00yIFjU2Xp5OvZZuZGw8kYUGddj3CzmlQjs8e1KmnJ5x4NjgtK/4M1JCG3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-tnV0aCyT/Co+7UnUK7DUv7Kp77K5ZPtGVRD1G5PLG3Yz0v3Yli+RXRA6nYKE2q0f" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, rgba(0, 0, 60, 1) 0%, rgba(102, 16, 242, 1) 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: rgba(0, 0, 78, 0.9);
+            padding: 0 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0px 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: aliceblue;
+            padding: 10px;
+            transition: color 0.3s ease, font-size 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: rgb(162, 78, 240);
+            font-size: 1.1rem;
+        }
+
+        .left {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+        }
+
+        .hamburger div {
+            height: 3px;
+            background: white;
+        }
+
+        .firstSection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .firstSection > div {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .leftSection {
+            font-size: 2.2rem;
+            margin: 0 20px;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #element {
+            color: rgb(162, 78, 240);
+        }
+
+        .text-gray {
+            color: gray;
+        }
+
+        .secondSection {
+            margin: auto;
+            margin-top: 20px;
+            max-width: 90vw;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .secondSection h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .secondSection .box {
+            background-color: aliceblue;
+            width: 100%;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .secondSection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 100px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: rgba(0, 0, 78, 0.9);
+                position: absolute;
+                top: 80px;
+                left: 0;
+                padding: 20px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+        }
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+        }
+        .vertical-desc {
+            position: relative;
+            top: 86px;
+            color: antiquewhite;
+            width: 150px;
+            font-size: 9px;
+        }
+
+        .contactSection {
+            margin: auto;
+            margin-top: 200px;
+            max-width: 90vw;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .contactSection h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: none;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: rgb(162, 78, 240);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: rgb(132, 48, 210);
+        }
+
+        .projectsSection {
+            margin: auto;
+            margin-top: 400px;
+            max-width: 90vw;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .projectsSection h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: rgb(162, 78, 240);
+        }
+
+        .project-description {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: rgb(162, 78, 240);
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 78, 0.9);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+
+        .btn {
+    background: #a24ef0;
+    color: #ffffff;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #7c2ebe;
+    transform: scale(1.05);
+}
+
+.project {
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+body {
+    background: linear-gradient(135deg, #00003c 0%, #6610f2 100%);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 20px;
+}
+
+nav {
+    background-color: rgba(0, 0, 78, 0.9);
+    color: #ffffff;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a24ef0;
+}
+
+.project-title {
+    color: #a24ef0; /* Adjusted project title color */
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Nilesh's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button class="btn btn-link text-white" onclick="toggleResume()">Resume</button></li>
+                    <li><button class="btn btn-link text-white" onclick="toggleTheme()">Toggle Theme</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, my name is <div style="color:rgb(162, 78, 240); display: inline-block;">Nilesh</div> 
+                <div>and I am a </div>
+                <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img src="im.png" alt="">
+            </div>
+        </section>
+        <hr>
+        <div class="secondSection">
+            <span class="text-gray">What I have done so far</span>
+            <h1>Work Experience</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="im.png" alt="">
+                    <div class="vertical-title">Web Developer (2023-2024)</div>
+                    <div class="vertical-desc">
+                        Learned HTML, CSS, JavaScript, and React and created various projects, including this portfolio as an example.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="im.png" alt="">
+                    <div class="vertical-title">Pandas (Python Library)</div>
+                    <div class="vertical-desc">
+                        Performed data analysis tasks on real-world data, practiced on LeetCode, and worked extensively with Pandas for data manipulation and analysis.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="im.png" alt="">
+                    <div class="vertical-title">Python (2023-2024)</div>
+                    <div class="vertical-desc">
+                        Developed a strong understanding of Python's core concepts and libraries over a year. My experience includes web development, data analysis, automation, and scripting. Proficient in writing clean, efficient, and maintainable Python code.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="im.png" alt="">
+                    <div class="vertical-title">MySQL (Data Analyst) (2023-2024)</div>
+                    <div class="vertical-desc">
+                        Developed a solid understanding of database design, querying, and optimization. Experience includes creating and managing databases, writing complex queries, and working with various relational database management systems (RDBMS).
+                    </div>
+                </div>
+                <div class="vertical"></div>
+            </div>
+        </div>
+
+
+        <section id="projects" class="projectsSection">
+            <h1>Projects</h1>
+            <div class="project">
+               
+                <div class="project-title">Steganography</div>
+                <div class="project-description">
+                    Image Steganography Using Python and tkinter Steganography project with gui. Hides text inside image. Least Significant Algorithm (LSB) is used to hide the text. What is Steganography ? Steganography is the practice of concealing a file, message, image, or video within another file, message, image, or video.
+                </div>
+                <a href="https://github.com/singhnileshh/Secret-Data-Hiding" class="project-link">View Project</a>
+            </div>
+            <div class="project">
+                <div class="project-title">Frontend-Starbucks</div>
+                <div class="project-description">
+                    To showcase my HTML, CSS, and JavaScript skills, I will create an attractive and responsive frontend for a Starbucks website
+                </div>
+                <a href="https://starbucksfrontend.vercel.app/" class="project-link">View Project</a>
+            </div>
+            <div class="project">
+                
+                <div class="project-title">Efficient Solar Light System</div>
+                <div class="project-description">
+                    Increase the Productivity of the electricity by 25-30 % with the help of LDR sensor and Servo motors which tilts to the
+                        direction of the sun by detecting the light.
+                        Engineered and implemented an IoT hardware project integrating solar technology, resulting in a 40% reduction 
+                        in energy consumption and a 25% increase in operational efficiency
+                </div>
+                <a href="https://github.com/singhnileshh/Efficient-Solar-Light-System/tree/main" class="project-link">View Project</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contactSection">
+            <h1>Contact Me</h1>
+            <form class="contact-form" action="contact.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send</button>
+            </form>
+            
+        </section>
+
+        <footer class="footer" style="background-color: transparent; padding: 20px; text-align: center; color: white;">
+            <div class="social-icons">
+                <a href="https://github.com/singhnileshh" target="_blank" style="color: beige; text-decoration: none; margin: 0 10px;"><i class="fab fa-github" style="font-size: 24px;"></i> GitHub</a>
+                <a href="https://leetcode.com/u/Nileshsingh2623/" target="_blank" style="color: beige; text-decoration: none; margin: 0 10px;"><i class="fab fa-code" style="font-size: 24px;"></i> LeetCode</a>
+                <a href="https://www.linkedin.com/in/nilesh-kumar-singh-7a714b21b/" target="_blank" style="color: beige; text-decoration: none; margin: 0 10px;"><i class="fab fa-linkedin" style="font-size: 24px;"></i> LinkedIn</a>
+            </div>
+        </footer>
+        
+        
+        
+        
+        
+    </main>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></script>
+    <script>
+        // Toggle function to show/hide resume section
+        function toggleResume() {
+            var resumeSection = document.getElementById('resume-section');
+            resumeSection.style.display = resumeSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Toggle function for mobile navigation menu
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Graphic Designer', 'Data Analyst'],
+            typeSpeed: 85,
+            backSpeed: 50,
+            loop: true
+        });
+
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+<script src="script.js"></script>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Graphic Designer', 'Data Analyst'],
+            typeSpeed: 85,
+            backSpeed: 50,
+            loop: true
+        });
+
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
